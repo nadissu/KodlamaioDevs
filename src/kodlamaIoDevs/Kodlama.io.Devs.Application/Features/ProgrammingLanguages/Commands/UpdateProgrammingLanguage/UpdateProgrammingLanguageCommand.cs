@@ -32,11 +32,12 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Upd
 
             public async Task<ProgrammingLanguageUpdateDto> Handle(UpdateProgrammingLanguageCommand request, CancellationToken cancellationToken)
             {
-                ProgrammingLanguage mapperProgrammingLanguage = _mapper.Map<ProgrammingLanguage>(request);
-                await _programmingLanguageBusinessRules.ProgrammingLanguageShouldBeExistWhenRequested(mapperProgrammingLanguage);
                 
-                ProgrammingLanguage programmingLanguage = await _programmingLanguageRepository.UpdateAsync(mapperProgrammingLanguage);
-                ProgrammingLanguageUpdateDto responseUpdatedProgrammingLanguageDto = _mapper.Map<ProgrammingLanguageUpdateDto>(programmingLanguage);
+                await _programmingLanguageBusinessRules.ProgrammingLanguageShouldBeExistWhenRequested(request.Id);
+                var getProgrammingLanguage = await _programmingLanguageRepository.GetAsync(x=>x.Id==request.Id);
+                var programmingLanguage = _mapper.Map(request, getProgrammingLanguage);
+                ProgrammingLanguage response =  _programmingLanguageRepository.Update(programmingLanguage);
+                ProgrammingLanguageUpdateDto responseUpdatedProgrammingLanguageDto = _mapper.Map<ProgrammingLanguageUpdateDto>(response);
                 return responseUpdatedProgrammingLanguageDto;
 
             }
