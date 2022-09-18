@@ -17,13 +17,13 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Upd
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public class UpdateProgrammingLanguageCommandHandle : IRequestHandler<UpdateProgrammingLanguageCommand, ProgrammingLanguageUpdateDto>
+        public class UpdateProgrammingLanguageCommandHandler : IRequestHandler<UpdateProgrammingLanguageCommand, ProgrammingLanguageUpdateDto>
         {
             IProgrammingLanguageRepository _programmingLanguageRepository;
             IMapper _mapper;
             ProgrammingLanguageBusinessRules _programmingLanguageBusinessRules;
 
-            public UpdateProgrammingLanguageCommandHandle(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageBusinessRules)
+            public UpdateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageBusinessRules)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

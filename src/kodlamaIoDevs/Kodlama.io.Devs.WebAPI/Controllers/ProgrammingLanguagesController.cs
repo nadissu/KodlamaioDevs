@@ -17,6 +17,7 @@ namespace Kodlama.io.Devs.WebAPI.Controllers
     [ApiController]
     public class ProgrammingLanguagesController : BaseController
     {
+        
         [HttpGet]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {

@@ -17,12 +17,12 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetB
       
         public int Id { get; set; }
 
-        public class GetByIdProgrammingLanguageQueryHandle : IRequestHandler<GetByIdProgrammingLanguageQuery, ProgrammingLanguageGetByIdDto>
+        public class GetByIdProgrammingLanguageQueryHandler : IRequestHandler<GetByIdProgrammingLanguageQuery, ProgrammingLanguageGetByIdDto>
         {
             IProgrammingLanguageRepository _programmingLanguageRepository;
             IMapper _mapper;
 
-            public GetByIdProgrammingLanguageQueryHandle(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper)
+            public GetByIdProgrammingLanguageQueryHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

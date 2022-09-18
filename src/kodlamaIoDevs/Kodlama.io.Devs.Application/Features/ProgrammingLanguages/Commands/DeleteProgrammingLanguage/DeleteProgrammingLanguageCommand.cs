@@ -15,12 +15,12 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Del
     public class DeleteProgrammingLanguageCommand:IRequest<ProgrammingLanguageDeleteDto>
     {
         public int Id { get; set; }
-        public class DeleteProgrammingLanguageCommandHandle : IRequestHandler<DeleteProgrammingLanguageCommand, ProgrammingLanguageDeleteDto>
+        public class DeleteProgrammingLanguageCommandHandler : IRequestHandler<DeleteProgrammingLanguageCommand, ProgrammingLanguageDeleteDto>
         {
             IProgrammingLanguageRepository _programmingLanguageRepository;
             IMapper _mapper;
 
-            public DeleteProgrammingLanguageCommandHandle(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper)
+            public DeleteProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

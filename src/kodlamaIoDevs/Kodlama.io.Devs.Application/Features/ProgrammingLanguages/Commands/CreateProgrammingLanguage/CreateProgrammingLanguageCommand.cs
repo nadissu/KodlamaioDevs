@@ -15,13 +15,13 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Cre
     public class CreateProgrammingLanguageCommand:IRequest<CreatedProgrammingLanguageDto>
     {
         public string Name { get; set; }
-        public class CreateProgrammingLanguageCommandHandle : IRequestHandler<CreateProgrammingLanguageCommand, CreatedProgrammingLanguageDto>
+        public class CreateProgrammingLanguageCommandHandler : IRequestHandler<CreateProgrammingLanguageCommand, CreatedProgrammingLanguageDto>
         {
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
             private readonly IMapper _mapper;
             private readonly ProgrammingLanguageBusinessRules _programmingLanguageBusinessRules;
 
-            public CreateProgrammingLanguageCommandHandle(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageBusinessRules)
+            public CreateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageBusinessRules)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;
