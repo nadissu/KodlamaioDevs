@@ -20,6 +20,7 @@ namespace Kodlama.io.Devs.Persistance.Contexts
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
 
 
 
@@ -96,8 +97,17 @@ namespace Kodlama.io.Devs.Persistance.Contexts
                 a.Property(p => p.ReasonRevoked).HasColumnName("ReasonRevoked");
                 a.HasOne(p => p.User);
             });
-        
-        ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1, "C#"), new(2, "Java") };
+            modelBuilder.Entity<SocialMedia>(a =>
+            {
+                a.ToTable("SocialMedias").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.Name).HasColumnName("Name");
+                a.Property(p => p.UserId).HasColumnName("UserId");
+                a.Property(p => p.Url).HasColumnName("Url");
+                a.HasOne(p => p.User);
+            });
+
+            ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1, "C#"), new(2, "Java") };
             modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguageEntitySeeds);
 
             LanguageTechnology[] languageTechnologyEntitySeeds = { new(1, 1, "ASP.NET"), new(2, 1, ".NET CORE"), new(3, 2, "SPRİNG"), new(4, 2, "JSP") };

@@ -10,6 +10,10 @@
     <Folder Include="Features\Auth\Models\" />
     <Folder Include="Features\Auth\Queries\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
+    <Folder Include="Features\SocialMedias\Dtos\" />
+    <Folder Include="Features\SocialMedias\Models\" />
+    <Folder Include="Features\SocialMedias\Rules\" />
+    <Folder Include="Features\SocialMedias\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
