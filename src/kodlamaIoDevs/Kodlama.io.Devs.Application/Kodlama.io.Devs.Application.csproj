@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Auth\Models\" />
+    <Folder Include="Features\Auth\Queries\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
   </ItemGroup>
   <ItemGroup>
