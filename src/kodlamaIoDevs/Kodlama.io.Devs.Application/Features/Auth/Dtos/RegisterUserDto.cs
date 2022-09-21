@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Application.Features.Auth.Dtos
 {
-    public class RegisterUserDto:UserForRegisterDto
+    public class RegisterUserDto
     {
-        
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Token { get; set; }
     }
 }
